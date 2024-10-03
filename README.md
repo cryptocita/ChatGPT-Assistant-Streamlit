@@ -1,3 +1,65 @@
+ENGLISH:
+
+🤖 ChatGPT-Assistant
+ChatGPT conversation assistant built on Streamlit, easy to use, not easy to disconnect, supports the following functions:
+
+Multiple chat windows
+Historical conversation retention
+Preset chat context
+Model parameter adjustment
+Conversation export as Markdown file
+ChatGPT voice communication (Edge browser on PC is recommended)
+🤩 Deployed project
+Directly use the deployed project, you can configure Openai Key in the settings options of the web page, at this time, historical conversations will not be retained, it is only valid in the user's current session, and others will not share.
+Deploy the project by yourself, after configuring Openai Key in Secrets, historical conversation records will be retained, at this time, you need to set it as a private application to create a personal GPT assistant.
+Usage tips:
+Double-click the page or press the / key to directly locate the input bar
+Ctrl + Enter can quickly submit issues
+Note:
+Do not use streamlit==1.28.0 version, there is an infinite rerun bug
+Deployment
+Streamlit Cloud deployment (recommended)
+Easy and free deployment, and can be used without scientific Internet access. Note that it is set as a private application.
+Please refer to the detailed steps provided by @Hannah11111.
+
+Fork this project to your personal Github repository.
+Register a Streamlit Cloud account and connect to Github.
+Start deploying the application. For details, please refer to the official tutorial.
+Configure Openai Key in the Secrets of the application. For the specific format, please refer to the figure below:
+advanced-setting.png set-apikey.png
+You can also configure it after the deployment is completed.
+Local deployment
+Establish a virtual environment (recommended)
+Clone the project (you can also download it manually to your local machine)
+git clone https://github.com/PierXuY/ChatGPT-Assistant.git
+Install dependencies
+pip install -r requirements.txt
+Set API Key; Set API Base (optional)
+Write apikey = "Openai Key" in the .streamlit/secrets.toml file
+Write the proxy interface in the .streamlit/secrets.toml file to achieve free science use. The format is apibase = "proxy interface address". The instructions are as follows:
+You can directly use the proxy interface that has been built by the openai-forward project, that is, apibase = "https://api.openai-forward.com/v1".
+You can refer to the openai-forward project to build and set up the proxy interface yourself.
+Start the application
+streamlit run app.py
+Desktop application
+Package based on the project package-url
+
+Download the program in Releases and install it
+After the installation is complete, open it and use it. The default point is the deployed sample project
+Open the conf.json file in the config folder and modify the url to point to the personal deployed project. You need to log in for the first time, which is slow
+Description
+You can customize the user name and SVG format avatar in the custom.py file (source).
+Edit set_context.py in the deployed project source code to add preset context options, which will be automatically synchronized to the application.
+If conditions permit, you can consider changing the file reading and writing logic in helper.py to cloud database operations to prevent historical records from being lost.
+Acknowledgements
+It was originally based on the shan-mx/ChatGPT_Streamlit project. Thanks.
+The preset prompts refer to the binary-husky/chatgpt_academic project and the f/awesome-chatgpt-prompts project. Thanks.
+The voice interaction function refers to the implementation of the projects talk-to-chatgpt and Voice Control for ChatGPT. Thanks.
+The local free Internet access function can be achieved with the help of the project openai-forward, thanks.
+
+
+CHINESE:
+
 # 🤖 ChatGPT-Assistant
 基于Streamlit搭建的ChatGPT对话助手，简单易用，不易断连，支持以下功能：
 - 多聊天窗口
